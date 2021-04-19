@@ -1,14 +1,12 @@
 name: Pull and Test
-on: [push]
+on: [ push ]
 jobs:
-  mac_docker:
-    runs-on: macos-latest
+  linux_docker:
+    runs-on: ubuntu-20.04
     steps:
       - uses: docker-practice/actions-setup-docker@master
       - name: Hello World Docker
         run: |
-         set -x
-         docker version
-         docker run --rm hello-world
-      - name: Pull Docker Container
-        run: docker pull python
+          set -x
+          docker version
+          docker run --rm hello-world
