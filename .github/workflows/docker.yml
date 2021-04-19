@@ -10,3 +10,5 @@ jobs:
           set -x
           docker version
           docker run --rm hello-world
+      - name: Pull Docker Container
+        run: docker pull nrel/enstore
