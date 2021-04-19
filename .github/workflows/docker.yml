@@ -1,0 +1,9 @@
+name: Pull and Test
+on: [push]
+jobs:
+  linux_build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pull Docker Container
+        run: docker pull python
