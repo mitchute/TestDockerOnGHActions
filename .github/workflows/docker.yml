@@ -1,9 +1,14 @@
 name: Pull and Test
 on: [push]
 jobs:
-  linux_build:
+  mac_docker:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: docker-practice/actions-setup-docker@master
+      - name: Hello World Docker
+        run: |
+         set -x
+         docker version
+         docker run --rm hello-world
       - name: Pull Docker Container
         run: docker pull python
